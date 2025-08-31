@@ -152,8 +152,8 @@ declare interface BankInfoProps {
 declare interface HeaderBoxProps {
   type?: "title" | "greeting";
   title: string;
-  subtext: string;
-  user?: string;
+  subtext?: string;
+  user: string;
 }
 
 declare interface MobileNavProps {

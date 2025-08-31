@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-const config = {
+module.exports = {
   darkMode: ["class"],
   content: [
     "./pages/**/*.{js,jsx,ts,tsx}",
@@ -21,6 +21,7 @@ const config = {
       colors: {
         fill: { 1: "rgba(255, 255, 255, 0.10)" },
         "bank-gradient": "#0179FE",
+        "bankGradient": "#0179FE", // adding alternative naming
         indigo: { 500: "#6172F3", 700: "#3538CD" },
         success: {
           25: "#F6FEF9",
@@ -70,5 +71,3 @@ const config = {
   },
   plugins: [require("tailwindcss-animate")],
 };
-
-module.exports = config;

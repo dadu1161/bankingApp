@@ -1,9 +1,10 @@
 const HeaderBox = ({ type="title", title, subtext, user }: HeaderBoxProps ) => {
+    
     return (
     <div className='header-box'>
         <h1 className='header-box-title'>{title}
             {type==="greeting" && (
-                <span className='text-bank-gradient'> {/* updated class */}
+                <span className='text-bank-gradient font-semibold'> {/* testing Tailwind-generated class */}
                     &nbsp;{user}
                 </span>
             )}
