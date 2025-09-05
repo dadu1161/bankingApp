@@ -15,10 +15,10 @@ const Sidebar = ({ user }: SiderbarProps) => {
         <Link href="/" className="mb-12 cursor-pointer flex items-center gap-2">
           <Image 
             src="/icons/logo.svg"
-            width={34}
-            height={34}
+            width={40}
+            height={40}
             alt="Horizon logo"
-            className="size-[24px] max-xl:size-14"
+            className="size-[40px] max-xl:size-14"
           />
           <h1 className="sidebar-logo">Horizon</h1>
         </Link>

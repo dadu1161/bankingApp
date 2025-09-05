@@ -1,7 +1,6 @@
 import MobileNav from "@/components/MobileNav";
 import Sidebar from "@/components/Sidebar";
 import Image from "next/image";
-import { redirect } from "next/navigation"; 
 
 export default async function RootLayout({
   children,
@@ -16,7 +15,9 @@ export default async function RootLayout({
 
       <div className="flex size-full flex-col">
         <div className="root-layout">
-          <Image src="/icons/logo.svg" width={30} height={30} alt="menu logo" />
+         
+          <Image src="/icons/logo.svg" width={40} height={40} alt="menu logo" />
+          
           <div>
             <MobileNav user={loggedIn} />
           </div>
