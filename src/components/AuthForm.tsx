@@ -18,9 +18,6 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 
-const formSchema = z.object({
-  email: z.string().email("Please enter a valid email address"),
-})
 
 const AuthForm = ({type}: { type: string }) => {
   const [user, setUser] = useState (null);
