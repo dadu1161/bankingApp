@@ -32,8 +32,15 @@ const AuthForm = ({type}: { type: string }) => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      email: "",
-      password: "",
+    email: "",
+    password: "",
+    firstName: "",
+    lastName: "",
+    address: "",
+    state: "",
+    postalCode: "",
+    dateOfBirth: "",
+    ssn: "",
     },
   })
  
@@ -48,8 +55,8 @@ const AuthForm = ({type}: { type: string }) => {
 
   return (
   <section className='authform'>
-    <header className="flex flex-col gap-5 md:gap-8">
-       <Link href="/" className="cursor-pointer flex items-center gap-1 px-4 left-0">
+    <header className="flex flex-col gap-5 md:gap-8 mt-5">
+       <Link href="/" className="cursor-pointer flex items-center gap-3 px-4 left-0">
                     <Image 
                         src="/icons/logo.svg"
                         width={40}
@@ -92,7 +99,8 @@ const AuthForm = ({type}: { type: string }) => {
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
                   {type==='sign-up' &&(
                     <>
-                   <div className="flex gap-6"> <CustomInput
+                   <div className="flex gap-6"> 
+                    <CustomInput
                  control={form.control} name='firstName' label='First Name' placeholder='Enter your first name'
                  />   
                  <CustomInput
@@ -101,15 +109,22 @@ const AuthForm = ({type}: { type: string }) => {
                  <CustomInput
                  control={form.control} name='address' label='Address' placeholder='Enter your specfic address'
                  />
+                 <div className="flex gap-6"> 
                  <CustomInput
                  control={form.control} name='state' label='State' placeholder='Example: Addis Ababa'
                  />
                  <CustomInput
-                 control={form.control} name='postalCode' label='postalCode' placeholder='Example: 1234'
+                 control={form.control} name='postalCode' label='postalCode' placeholder='Example:1234'
                  />
+                 </div>
+                 <div className="flex gap-6"> 
                  <CustomInput
                  control={form.control} name='dateOfBirth' label='Date pf birth' placeholder='YYYY-MM-DD'
                  />
+                 <CustomInput
+                 control={form.control} name='ssn' label='SSN' placeholder='Example:123'
+                 />
+                 </div>
                     </>
                   )}
                   <CustomInput
@@ -118,6 +133,7 @@ const AuthForm = ({type}: { type: string }) => {
                   <CustomInput
                  control={form.control} name='password' label='password' placeholder='please Enter your password'
                  />
+                 
 
             <div className="flex flex-col gap-4">
             <Button type="submit" className="form-btn" disabled={isloading}>
@@ -135,13 +151,13 @@ const AuthForm = ({type}: { type: string }) => {
 
           </form>
         </Form>
-        <footer className="flex justify-center gap-4 mt-3">
+        <footer className="flex justify-center gap-3 mt-3">
           <p className="text-14 font-normal text-gray-600 pt-1">
             {type==='sign-in'?
           "Don't have an account?"
           :"Already have an account?"}            
           </p>
-            <Link href={type==='sign-in'?'/sign-up':'/sign-in'} >
+            <Link  className="text-blue-500 " href={type==='sign-in'?'/sign-up':'/sign-in'} >
               {type==='sign-in'?'Sign up':'Sign in'}  
             </Link>
         </footer>
